@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>NepalStockMarket</title>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static 'js/skel-layers.min.js' %}"></script>
+		<script src="{% static 'js/init.js' %}"></script>
+		
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/skel.css' %}"  />
+		<style>
+			.container = {
+				background-color: #ffffff;
+			}
+		</style>
+		
+		<noscript>		
+			<link rel="shortcut icon" href="../favicon.ico">
+		</noscript>
+		
+	</head>
+	<body class="homepage">
+	<div class="header">
+			<img src="{% static 'images/images.jpg' %}" height="350px" width="1350px" />
+		</div>
+	
+		<!-- Header -->
+	<div id="header">
+		<div class="container">
+						<!-- Nav -->
+			<nav id="nav">
+			<ul>
+			 <!-- {% block navigation %} -->
+				<li class="active"><a href="{% url 'home1' %}">Home</a></li>
+				<li><a href="{% url 'show_data' %}">NepseData</a></li><li><a href="{% url 'analysis' %}">Analysis</a></li>
+				<li><a href="{% url 'prediction' %}">Prediction</a></li>
+				<li><a href="{% url 'about' %}">AboutUs</a></li>
+			<!--  {% endblock %} -->
+			</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="wrapper style2"  style="background-color: white;">
+		<div class="component">
+			{%block content %}	{% endblock %}
+		</div>
+	
+	</div>
+	<div class="footer" style="background-color: black">
+    <div>
+      <p style="float: center;">&copy; Copyright <a href="#">StockMarketNepal 2017</a>.</p>
+
+      <p style="float: center;" >Layout by <a href="http://www.mystockanalyser.com/">StockMarketNepal 2017</a></p>
+      <div class="clr"></div>
+    </div>
+    
+	<!--div id="copyright">
+		Copyright @ StockMarketNepal 2017
+	</div> -->
+	</body>
+</html>

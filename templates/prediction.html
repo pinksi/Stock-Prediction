@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+{% include 'table_css.html' %}
+<style>
+	.title {
+	   	color: black;
+		font-weight: bold;
+		font-size:30px;
+		font-family:monospace; 
+		padding-bottom: 10px;
+	}
+	.increase{
+		color:green;	
+	}
+	.decrease{
+		color: red;
+	}
+	.neutral{
+		color: grey;
+
+	}
+	<style>	
+th, td {
+    padding: 15px;
+}
+img{
+  border: none;
+}
+
+h4{
+	font: 16px Arial, Helvetica, sans-serif;
+	margin: 0px;
+	color:#000000;
+}
+p small{
+	font: 16px Arial, Helvetica, sans-serif;
+	margin: 0px;
+	color:#08722A;
+
+}
+p big{
+	font: 16px Arial, Helvetica, sans-serif;
+	margin: 0px;
+	color:#721608;
+.table{
+	font:16px Arial, Helvetica, sans-serif;
+	margin: 0px;
+	color: #000000;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+</style>		
+</style>
+<div class="title" allign="center">
+ 		<p><h4><b>Prediction using news analysis</b></h4></p>
+ 
+ 		<table>
+		{% for key,value in result.items %}
+			<tr><td><p><big>Total {{key}} news</big></p></td> <td><p><small>{{value}}</small></p></td></tr>
+		{% endfor %}
+		</table>
+	
+</div>	
+	<h3><small>NEPSE index value is predict to {{prediction}}</small></h3>
+	
+		
+{% endblock %}	

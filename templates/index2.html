@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+{% include 'table_css.html' %}
+<!-- live data page-->
+	<style>
+		.title {
+ 	   	color: black;
+    	font-weight: bold;
+    	font-size:30px;
+    	font-family:monospace; 
+    	padding-bottom: 10px;
+				}
+		.closing-price1{
+		color:green;	
+		}
+		.closing-price2{
+			color: red;
+		}		
+	</style>	
+	
+
+<div  class="title" align="center">
+Stock Data as of {{date}}
+</div>
+<table>
+	<thead>
+	<tr>
+		<th>SN</th>
+		<th>Symbol</th>
+		<th>Traded Companies</th>
+		<th>No Of Transactions</th>
+		<th>Traded Shares</th>
+		<th>Max Price</th>
+		<th>Min Price</th>
+		<th>Closing Price</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% if Adbl.price_change %}
+	<tr><td class="sn">1</td><td class="symbol">ADBL</td><td class="traded-companies">Agriculture Development Bank</td><td class="no-of-transactions">{{Adbl.N_O_T}}</td><td class="traded-share">{{Adbl.T_S}}</td><td class="max-price">{{Adbl.Max_P}}</td><td class="min-price">{{Adbl.Min_P}}</td><td class="closing-price1">{{Adbl.Clo_P}}</td>
+	</tr>
+	{% else %}
+	<tr><td class="sn">1</td><td class="symbol">ADBL</td><td class="traded-companies">Agriculture Development Bank</td><td class="no-of-transactions">{{Adbl.N_O_T}}</td><td class="traded-share">{{Adbl.T_S}}</td><td class="max-price">{{Adbl.Max_P}}</td><td class="min-price">{{Adbl.Min_P}}</td><td class="closing-price2">{{Adbl.Clo_P}}</td>
+	</tr>
+	{% endif %}
+
+	{% if Chcl.price_change %}	
+	<tr><td class="sn">2</td><td class="symbol">CHCL</td><td class="traded-companies">Chilime Hydropower</td><td class="no-of-transactions">{{Chcl.N_O_T}}</td><td class="traded-share">{{Chcl.T_S}}</td><td class="max-price">{{Chcl.Max_P}}</td><td class="min-price">{{Chcl.Min_P}}</td><td class="closing-price1">{{Chcl.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">2</td><td class="symbol">CHCL</td><td class="traded-companies">Chilime Hydropower</td><td class="no-of-transactions">{{Chcl.N_O_T}}</td><td class="traded-share">{{Chcl.T_S}}</td><td class="max-price">{{Chcl.Max_P}}</td><td class="min-price">{{Chcl.Min_P}}</td><td class="closing-price2">{{Chcl.Clo_P}}</td>
+	{%endif%}
+
+	{% if Nabil.price_change %}		
+	<tr><td class="sn">3</td><td class="symbol">NABIL</td><td class="traded-companies">Nabil Bank Limited</td><td class="no-of-transactions">{{Nabil.N_O_T}}</td><td class="traded-share">{{Nabil.T_S}}</td><td class="max-price">{{Nabil.Max_P}}</td><td class="min-price">{{Nabil.Min_P}}</td><td class="closing-price1">{{Nabil.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">3</td><td class="symbol">NABIL</td><td class="traded-companies">Nabil Bank Limited</td><td class="no-of-transactions">{{Nabil.N_O_T}}</td><td class="traded-share">{{Nabil.T_S}}</td><td class="max-price">{{Nabil.Max_P}}</td><td class="min-price">{{Nabil.Min_P}}</td><td class="closing-price2">{{Nabil.Clo_P}}</td>
+	</tr>
+	{%endif%}
+
+	{% if Nlic.price_change %}		
+	<tr><td class="sn">4</td><td class="symbol">NLIC</td><td class="traded-companies">Nepal Life Insurance Company</td><td class="no-of-transactions">{{Nlic.N_O_T}}</td><td class="traded-share">{{Nlic.T_S}}</td><td class="max-price">{{Nlic.Max_P}}</td><td class="min-price">{{Nlic.Min_P}}</td><td class="closing-price1">{{Nlic.Clo_P}}</td>
+	</tr>
+	{%else%}	
+	<tr><td class="sn">4</td><td class="symbol">NLIC</td><td class="traded-companies">Nepal Life Insurance Company</td><td class="no-of-transactions">{{Nlic.N_O_T}}</td><td class="traded-share">{{Nlic.T_S}}</td><td class="max-price">{{Nlic.Max_P}}</td><td class="min-price">{{Nlic.Min_P}}</td><td class="closing-price2">{{Nlic.Clo_P}}</td>
+	</tr>
+	{%endif%}
+
+	{% if Ntc.price_change %}
+	<tr><td class="sn">5</td><td class="symbol">NTC</td><td class="traded-companies">Nepal Telecom</td><td class="no-of-transactions">{{Ntc.N_O_T}}</td><td class="traded-share">{{Ntc.T_S}}</td><td class="max-price">{{Ntc.Max_P}}</td><td class="min-price">{{Ntc.Min_P}}</td><td class="closing-price1">{{Ntc.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">5</td><td class="symbol">NTC</td><td class="traded-companies">Nepal Telecom</td><td class="no-of-transactions">{{Ntc.N_O_T}}</td><td class="traded-share">{{Ntc.T_S}}</td><td class="max-price">{{Ntc.Max_P}}</td><td class="min-price">{{Ntc.Min_P}}</td><td class="closing-price2">{{Ntc.Clo_P}}</td>
+	</tr>
+	{%endif%}
+
+
+	{% if Ohl.price_change %}	
+	<tr><td class="sn">6</td><td class="symbol">OHL</td><td class="traded-companies">Oriental Hotel Limited</td><td class="no-of-transactions">{{Ohl.N_O_T}}</td><td class="traded-share">{{Ohl.T_S}}</td><td class="max-price">{{Ohl.Max_P}}</td><td class="min-price">{{Ohl.Min_P}}</td><td class="closing-price1">{{Ohl.Clo_P}}</td>
+	</tr>
+	{%else}	
+	<tr><td class="sn">6</td><td class="symbol">OHL</td><td class="traded-companies">Oriental Hotel Limited</td><td class="no-of-transactions">{{Ohl.N_O_T}}</td><td class="traded-share">{{Ohl.T_S}}</td><td class="max-price">{{Ohl.Max_P}}</td><td class="min-price">{{Ohl.Min_P}}</td><td class="closing-price2">{{Ohl.Clo_P}}</td>
+	</tr>
+	{%endif%}
+
+	{% if Plic.price_change %}	
+	<tr><td class="sn">7</td><td class="symbol">PLIC</td><td class="traded-companies">Premier Life Insurance Company Limited</td><td class="no-of-transactions">{{Plic.N_O_T}}</td><td class="traded-share">{{Plic.T_S}}</td><td class="max-price">{{Plic.Max_P}}</td><td class="min-price">{{Plic.Min_P}}</td><td class="closing-price1">{{Plic.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">7</td><td class="symbol">PLIC</td><td class="traded-companies">Premier Life Insurance Company Limited</td><td class="no-of-transactions">{{Plic.N_O_T}}</td><td class="traded-share">{{Plic.T_S}}</td><td class="max-price">{{Plic.Max_P}}</td><td class="min-price">{{Plic.Min_P}}</td><td class="closing-price2">{{Plic.Clo_P}}</td>
+	</tr>
+	{%endif%}	
+
+	{% if Sbi.price_change %}	
+	<tr><td class="sn">8</td><td class="symbol">SBI</td><td class="traded-companies">Nepal SBI Bank Limited</td><td class="no-of-transactions">{{Sbi.N_O_T}}</td><td class="traded-share">{{Sbi.T_S}}</td><td class="max-price">{{Sbi.Max_P}}</td><td class="min-price">{{Sbi.Min_P}}</td><td class="closing-price1">{{Sbi.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">8</td><td class="symbol">SBI</td><td class="traded-companies">Nepal SBI Bank Limited</td><td class="no-of-transactions">{{Sbi.N_O_T}}</td><td class="traded-share">{{Sbi.T_S}}</td><td class="max-price">{{Sbi.Max_P}}</td><td class="min-price">{{Sbi.Min_P}}</td><td class="closing-price2">{{Sbi.Clo_P}}</td>
+	</tr>
+	{%endif%}
+	{% if Scb.price_change %}		
+	<tr><td class="sn">9</td><td class="symbol">SCB</td><td class="traded-companies">Stadard Chartered Bank Limited</td><td class="no-of-transactions">{{Scb.N_O_T}}</td><td class="traded-share">{{Scb.T_S}}</td><td class="max-price">{{Scb.Max_P}}</td><td class="min-price">{{Scb.Min_P}}</td><td class="closing-price1">{{Scb.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">9</td><td class="symbol">SCB</td><td class="traded-companies">Stadard Chartered Bank Limited</td><td class="no-of-transactions">{{Scb.N_O_T}}</td><td class="traded-share">{{Scb.T_S}}</td><td class="max-price">{{Scb.Max_P}}</td><td class="min-price">{{Scb.Min_P}}</td><td class="closing-price2">{{Scb.Clo_P}}</td>
+	</tr>
+	{%endif%}
+	{% if Shl.price_change %}	
+	<tr><td class="sn">10</td><td class="symbol">SHL</td><td class="traded-companies">Soaltee Hotel Limited</td><td class="no-of-transactions">{{Shl.N_O_T}}</td><td class="traded-share">{{Shl.T_S}}</td><td class="max-price">{{Shl.Max_P}}</td><td class="min-price">{{Shl.Min_P}}</td><td class="closing-price1">{{Shl.Clo_P}}</td>
+	</tr>
+	{%else%}
+	<tr><td class="sn">10</td><td class="symbol">SHL</td><td class="traded-companies">Soaltee Hotel Limited</td><td class="no-of-transactions">{{Shl.N_O_T}}</td><td class="traded-share">{{Shl.T_S}}</td><td class="max-price">{{Shl.Max_P}}</td><td class="min-price">{{Shl.Min_P}}</td><td class="closing-price2">{{Shl.Clo_P}}</td>
+	</tr>
+	{%endif%}	
+
+
+	</tbody>
+	<!-- <tbody>
+	<tr><td class="sn">1</td><td class="symbol">NABIL</td><td class="traded-companies">Nabil Bank Limited</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">2</td><td class="symbol">SCB</td><td class="traded-companies">Standard Chartered Bank</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">3</td><td class="symbol">NMB</td><td class="traded-companies">NMB Bank Limited</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">4</td><td class="symbol">NTC</td><td class="traded-companies">Nepal Telecom</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">5</td><td class="symbol">ARUN</td><td class="traded-companies">Arun Hydropower</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">6</td><td class="symbol">ARUN</td><td class="traded-companies">Arun Hydropower</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">7</td><td class="symbol">PBL</td><td class="traded-companies">Prime Bank Limited</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">8</td><td class="symbol">PLIC</td><td class="traded-companies">Primier Life Insurance Company</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">9</td><td class="symbol">SBI</td><td class="traded-companies">Nepal SBI Bank Limited</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+	<tr><td class="sn">10</td><td class="symbol">AFL</td><td class="traded-companies">Arniko Finance Limited</td><td class="no-of-transactions">50</td><td class="traded-share">500</td><td class="max-price">1000</td><td class="min-price">900</td><td class="closing-price">1000</td>
+	</tr>
+
+	</tbody> -->
+</table>
+
+{% endblock %}
+		
+		
